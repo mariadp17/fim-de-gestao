@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Importa a fonte 'Press Start 2P' do Google Fonts. */
+
+* {
+  margin: 0; /* Remove a margem padrão de todos os elementos. */
+  padding: 0; /* Remove o preenchimento padrão de todos os elementos. */
+  box-sizing: border-box; /* Inclui o padding e a borda no cálculo das dimensões totais dos elementos. */
+  list-style: none; /* Remove os estilos de lista padrão. */
+  border: none; /* Remove as bordas padrão. */
+  font-family: 'Press Start 2P', cursive; /* Define a fonte padrão para todos os elementos como 'Press Start 2P'. */
+}
+
+main {
+  display: flex; /* Define um layout flexível para o elemento principal. */
+  flex-direction: column; /* Organiza os itens do flex container em uma coluna. */
+  width: 100%; /* Define a largura do elemento principal como 100% do elemento pai. */
+  background-color: #d78f4b; /* Define a cor de fundo como cinza claro. */
+  background-size: cover; /* Faz com que a imagem de fundo cubra completamente o elemento. */
+  min-height: 100vh; /* Define a altura mínima como 100% da altura da viewport. */
+  align-items: center; /* Alinha os itens do flex container ao centro na direção transversal. */
+  justify-content: center; /* Alinha os itens do flex container ao centro na direção principal. */
+  padding: 20px 20px 50px; /* Adiciona preenchimento ao elemento: 20px no topo e nas laterais, 50px na parte inferior. */
+}
+
+header {
+  display: flex; /* Define um layout flexível para o cabeçalho. */
+  justify-content: center; /* Alinha os itens do cabeçalho ao centro na direção principal. */
+  font-size: 1.2em; /* Define o tamanho da fonte como 1.2 vezes o tamanho padrão. */
+  width: 100%; /* Define a largura do cabeçalho como 100% do elemento pai. */
+  max-width: 800px; /* Define a largura máxima do cabeçalho como 800px. */
+  padding: 10px; /* Adiciona 30px de preenchimento ao redor do cabeçalho. */
+  margin: 0 0 5px; /* Remove a margem superior e lateral, adiciona 50px de margem inferior. */
+}
+
+.grid {
+  display: grid; /* Define um layout de grade para o container. */
+  grid-template-columns: repeat(8, 1fr); /* Cria 6 colunas de largura igual na grade. */
+  gap: 15px; /* Define um espaço de 15px entre os itens da grade. */
+  width: 90%; /* Define a largura da grade como 100% do elemento pai. */
+  max-width: 900px; /* Define a largura máxima da grade como 1200px. */
+  margin: 0 auto; /* Centraliza a grade horizontalmente. */
+}
+
+.card {
+  aspect-ratio: 3/4; /* Define a proporção de aspecto como 3:4. */
+  width: 100%; /* Define a largura do cartão como 100% do elemento pai. */
+  border-radius: 5px; /* Adiciona um raio de borda de 5px para cantos arredondados. */
+  position: relative; /* Define a posição como relativa para posicionamento absoluto interno. */
+  transition: all 400ms ease; /* Adiciona uma transição suave de 400ms para todas as propriedades. */
+  transform-style: preserve-3d; /* Define o estilo de transformação 3D preservando os filhos em 3D. */
+  background-color: #ccc; /* Define a cor de fundo do cartão como cinza claro. */
+}
+
+.face {
+  width: 100%; /* Define a largura da face como 100% do elemento pai. */
+  height: 100%; /* Define a altura da face como 100% do elemento pai. */
+  position: absolute; /* Define a posição como absoluta para posicionamento dentro do cartão. */
+  background-size: cover; /* Faz com que a imagem de fundo cubra completamente a face. */
+  background-position: center; /* Centraliza a imagem de fundo. */
+  border: 5px solid; /* Adiciona uma borda de 5px sólida. */
+  border-radius: 5px; /* Adiciona um raio de borda de 5px para cantos arredondados. */
+  transition: all 400ms ease; /* Adiciona uma transição suave de 400ms para todas as propriedades. */
+}
+
+.flipped {
+  transform: rotateY(180deg); /* Rotaciona a frente do cartão em 180 graus no eixo Y. */
+}
+
+.back {
+  background-image: url('../images/fundo.jpg'); /* Define a imagem de fundo para a parte de trás do cartão. */
+  backface-visibility: hidden; /* Oculta a parte de trás da face quando vista de frente. */
+}
+
+.reveal-card {
+  transform: rotateY(180deg); /* Rotaciona o cartão em 180 graus no eixo Y para revelar a frente. */
+}
+
+.disabled-card {
+  filter: saturate(0); /* Remove a saturação das cores, deixando a carta em tons de cinza. */
+  opacity: 0.5; /* Define a opacidade como 50%, tornando a carta semi-transparente. */
+}
